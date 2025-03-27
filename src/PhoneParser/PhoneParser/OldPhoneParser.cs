@@ -29,6 +29,8 @@ namespace PhoneParser
                 var currentChar = inputArray[i];
                 var count = 1;
 
+                if (currentChar == '*' || currentChar == '#') continue;
+
                 for (int j = i + 1; j < inputArray.Length; j++)
                 {
                     if (inputArray[j] == currentChar)
