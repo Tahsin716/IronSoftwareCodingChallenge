@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PhoneParser\PhoneParser\PhoneParser.csproj" />
+    <ProjectReference Include="..\..\src\PhoneParser\PhoneParser.csproj" />
   </ItemGroup>
 
   <ItemGroup>
