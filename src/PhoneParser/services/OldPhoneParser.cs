@@ -3,7 +3,7 @@ using System.Text;
 
 namespace PhoneParser.Services
 {
-    public class OldPhoneParser : IPhoneParser
+    public class OldPhoneParser : IOldPhoneParser
     {
         private readonly Dictionary<char, string> KeypadMap;
 
@@ -23,7 +23,7 @@ namespace PhoneParser.Services
                 {'0', " " }
             };
         }
-        public string ParsePhonePad(string input)
+        public string OldPhonePad(string input)
         {
             if (string.IsNullOrEmpty(input)) return string.Empty;
 
