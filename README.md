@@ -47,6 +47,46 @@ The test folder contains the PhoneParser.Test the xUnit project, which contains 
   
 - If a `#` is encountered, we finalize processing and return the result.
 
+## Test Coverage
+
+### 1. Sample Test Cases
+
+- **Input:** `33#` → **Output:** `E`
+- **Input:** `227*#` → **Output:** `B`
+- **Input:** `4433555 555666#` → **Output:** `HELLO`
+- **Input:** `8 88777444666*664#` → **Output:** `TURING`
+
+### 2. Handling Empty Input
+
+- **Input:** `#` → **Output:** `""` (Empty string)
+
+### 3. Ignoring Characters After `#`
+
+- **Input:** `22#33445` → **Output:** `B`
+
+### 4. Single Key Press
+
+- **Input:** `2#` → **Output:** `A`
+- **Input:** `5#` → **Output:** `J`
+- **Input:** `9#` → **Output:** `W`
+
+### 5. Multi-Key Press Handling
+
+- **Input:** `22#` → **Output:** `B`
+- **Input:** `33#` → **Output:** `E`
+- **Input:** `88#` → **Output:** `U`
+
+### 6. Circular Key Press Handling
+
+- **Input:** `22222#` → **Output:** `B`
+- **Input:** `77777#` → **Output:** `P`
+
+### 7. Handling Backspace (`*`)
+
+- **Input:** `22***2225#` → **Output:** `CJ`
+- **Input:** `22 2225**#` → **Output:** `B`
+- **Input:** `***#` → **Output:** `""` 
+
 ## Requirements
 - **.NET Core 8.0+** is required to run this project.
 - A test framework (**xUnit**) is used for unit testing.
