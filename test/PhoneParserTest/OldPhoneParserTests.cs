@@ -22,6 +22,20 @@ namespace PhoneParserTest
             Assert.Equal(expected, result);
         }
 
+        [Fact]
+        public void OldPhonePad_ReturnsEmptyOnEmptyInput()
+        {
+            string result = _oldPhoneParser.OldPhonePad("#");
+            Assert.Equal("", result);
+        }
+
+        [Fact]
+        public void OldPhonePad_IgnoresCharactersAfterHash()
+        {
+            string result = _oldPhoneParser.OldPhonePad("22#33445");
+            Assert.Equal("B", result);
+        }
+
         [Theory]
         [InlineData("0#", " ")]
         [InlineData("1#", "&")]
@@ -55,11 +69,28 @@ namespace PhoneParserTest
         }
 
         [Theory]
-        [InlineData("22 2225#", "BCJ")]
-        [InlineData("22 2225*#", "BC")]
-        [InlineData("22 2225**#", "B")]
+        [InlineData("00000#", " ")]
+        [InlineData("11111#", "'")]
+        [InlineData("22222#", "B")]
+        [InlineData("33333#", "E")]
+        [InlineData("44444#", "H")]
+        [InlineData("55555#", "K")]
+        [InlineData("66666#", "N")]
+        [InlineData("77777#", "P")]
+        [InlineData("88888#", "U")]
+        [InlineData("99999#", "W")]
+        public void OldPhonePad_HandlesCircularPresses(string input, string expected)
+        {
+            string result = _oldPhoneParser.OldPhonePad(input);
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
         [InlineData("22***2225#", "CJ")]
+        [InlineData("22 2225*#", "BC")]
         [InlineData("***2225#", "CJ")]
+        [InlineData("22 2225#", "BCJ")]
+        [InlineData("22 2225**#", "B")]
         [InlineData("22 2225***#", "")]
         [InlineData("22 2225****#", "")]
         [InlineData("22*222*5*#", "")]
@@ -69,19 +100,6 @@ namespace PhoneParserTest
             string result = _oldPhoneParser.OldPhonePad(input);
             Assert.Equal(expected, result);
         }
-
-        [Fact]
-        public void OldPhonePad_ReturnsEmptyOnEmptyInput()
-        {
-            string result = _oldPhoneParser.OldPhonePad("#");
-            Assert.Equal("", result);
-        }
-
-        [Fact]
-        public void OldPhonePad_IgnoresCharactersAfterHash()
-        {
-            string result = _oldPhoneParser.OldPhonePad("22#33445");
-            Assert.Equal("B", result);
-        }
+        
     }
 }
