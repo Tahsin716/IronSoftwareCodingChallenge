@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9D5EA29F-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneParser", "src\PhoneParser\PhoneParser.csproj", "{204B3FF2-8F1F-4CFB-AD74-762D6CD3CB52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneParserTest", "test\PhoneParserTest\PhoneParserTest.csproj", "{53208A32-E431-4F41-91C1-E5B8FD547790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneParser.Test", "test\PhoneParserTest\PhoneParser.Test.csproj", "{53208A32-E431-4F41-91C1-E5B8FD547790}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
