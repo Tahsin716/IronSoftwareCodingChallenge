@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneParser", "src\PhonePar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneParser.Test", "test\PhoneParserTest\PhoneParser.Test.csproj", "{53208A32-E431-4F41-91C1-E5B8FD547790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src\App\App.csproj", "{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{53208A32-E431-4F41-91C1-E5B8FD547790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53208A32-E431-4F41-91C1-E5B8FD547790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53208A32-E431-4F41-91C1-E5B8FD547790}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,7 +32,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{204B3FF2-8F1F-4CFB-AD74-762D6CD3CB52} = {5947D444-12D9-4401-BDCD-41650216FE5B}
 		{53208A32-E431-4F41-91C1-E5B8FD547790} = {9D5EA29F-AD7B-40EE-AFC8-21FE190671D6}
-		{FDDD58B1-EA39-4886-8E78-1C7F8EEF05DF} = {5947D444-12D9-4401-BDCD-41650216FE5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6C6EB530-AD78-4997-AE41-E50E01FDEFA5}
