@@ -17,6 +17,8 @@ The project uses Clean Code and SOLID principles for achieving separation of con
    - `OldPhoneParser.cs`: Implements the IOldPhoneParser interface for converting old phone pad input to text.
 - `Program.cs`: Example usage of the Old Phone Parser.
 
+The test folder contains the PhoneParser.Test the xUnit project, which contains the following files:
+- `OldPhoneParserTests`: Unit tests ensuring correctness and edge case handling.
 
 
 ## Requirements
