@@ -1,11 +1,13 @@
 ## Overview
+
 This project implements a parser for an old mobile phone keypad. Given an input string representing key presses, it converts them into corresponding characters based on classic T9-style input.
 
 The project includes dependency injection using Ninject, unit tests using xUnit, and follows clean code principles.
 
 This project was developed as a coding challenge for **IronSoftware**.
 
-## Repository Structure
+
+##  Repository Structure
 
 The project uses Clean Code and SOLID principles for achieving separation of concerns. The files inside the PhoneParser, which is inside the  src folder, are structured as follows:
 
@@ -20,6 +22,30 @@ The project uses Clean Code and SOLID principles for achieving separation of con
 The test folder contains the PhoneParser.Test the xUnit project, which contains the following files:
 - `OldPhoneParserTests`: Unit tests ensuring correctness and edge case handling.
 
+
+## Solution
+
+- At first, we will keep the digit-to-letter mapping inside a Dictionary
+   - A dictionary (`_keypadMap`) stores the mapping of numeric keys to letters:
+     ```csharp
+     {'1', "&'("}, {'2', "ABC"}, {'3', "DEF"},
+     {'4', "GHI"}, {'5', "JKL"}, {'6', "MNO"},
+     {'7', "PQRS"}, {'8', "TUV"}, {'9', "WXYZ"},
+     {'0', " "}
+     ```
+     
+- We initialize an empty StringBuilder `result` to store the result.
+
+- We iterate through the input string, we use two variables `currentChar` for holding the current character and `count` to keep count of the number of times current character is repeated.
+
+- If a key is pressed multiple times in a row, the correct character is selected cyclically:
+     ```csharp
+        int index = (count - 1) % letters.Length;
+        return letters[index].ToString();
+     ```
+- If a `*` (backspace) is encountered, we remove the last character from the result.
+  
+- If a `#` is encountered, we finalize processing and return the result.
 
 ## Requirements
 - **.NET Core 8.0+** is required to run this project.
