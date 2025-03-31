@@ -1,4 +1,4 @@
-﻿namespace PhoneParser.contracts
+﻿namespace PhoneParser.Contracts
 {
     public interface IPhoneParser
     {

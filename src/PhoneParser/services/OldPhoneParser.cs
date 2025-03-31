@@ -1,7 +1,7 @@
-﻿using PhoneParser.contracts;
+﻿using PhoneParser.Contracts;
 using System.Text;
 
-namespace PhoneParser.services
+namespace PhoneParser.Services
 {
     public class OldPhoneParser : IPhoneParser
     {
