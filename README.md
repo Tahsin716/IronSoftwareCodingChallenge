@@ -1,9 +1,25 @@
-# Old Phone Parser
-
 ## Overview
 This project implements a parser for an old mobile phone keypad. Given an input string representing key presses, it converts them into corresponding characters based on classic T9-style input.
 
+The project includes dependency injection using Ninject, unit tests using xUnit, and follows clean code principles.
+
 This project was developed as a coding challenge for **IronSoftware**.
+
+## Repository Structure
+
+The project uses Clean Code and SOLID principles for achieving separation of concerns. The files inside the PhoneParser, which is inside the  src folder, are structured as follows:
+
+- `Contracts`: Contains the abstractions, such as interfaces.
+   - `IOldPhoneParser.cs`: Defines the interface for the OldPhonePad method.
+- `DI`: Contains the dependency injection files
+   - `ServiceRegistration`: Handles dependency injection using Ninject and fetching services as well.
+- `Services`: Contains the implementations of the services
+   - `OldPhoneParser.cs`: Implements the IOldPhoneParser interface for converting old phone pad input to text.
+- `Program.cs`: Example usage of the Old Phone Parser.
+
+The test folder contains the PhoneParser.Test the xUnit project, which contains the following files:
+- `OldPhoneParserTests`: Unit tests ensuring correctness and edge case handling.
+
 
 ## Requirements
 - **.NET Core 8.0+** is required to run this project.
@@ -25,19 +41,9 @@ This project was developed as a coding challenge for **IronSoftware**.
    ```
 
 ## Running the Application
-To test the `OldPhoneParser` functionality, you can create a console app and call:
-```csharp
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        string input = "222 7777 33";
-        string result = PhoneParser.OldPhoneParser.OldPhonePad(input);
-        Console.WriteLine(result); // Expected Output: "CPD"
-    }
-}
+To test the `OldPhoneParser` functionality, navigate to the src project directory and execute:
+```sh
+dotnet run
 ```
 
 ## Running Tests
