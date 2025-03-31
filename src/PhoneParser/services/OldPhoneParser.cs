@@ -1,23 +1,29 @@
-﻿using System.Text;
+﻿using PhoneParser.contracts;
+using System.Text;
 
-namespace PhoneParser
+namespace PhoneParser.services
 {
-    public static class OldPhoneParser
+    public class OldPhoneParser : IPhoneParser
     {
-        private readonly static Dictionary<char, string> KeypadMap = new Dictionary<char, string>
+        private readonly Dictionary<char, string> KeypadMap;
+
+        public OldPhoneParser()
         {
-            {'1', "&'(" },
-            {'2', "ABC" },
-            {'3', "DEF" },
-            {'4', "GHI" },
-            {'5', "JKL" },
-            {'6', "MNO" },
-            {'7', "PQRS" },
-            {'8', "TUV" },
-            {'9', "WXYZ" },
-            {'0', " " }
-        };
-        public static string OldPhonePad(string input)
+            KeypadMap = new Dictionary<char, string>
+            {
+                {'1', "&'(" },
+                {'2', "ABC" },
+                {'3', "DEF" },
+                {'4', "GHI" },
+                {'5', "JKL" },
+                {'6', "MNO" },
+                {'7', "PQRS" },
+                {'8', "TUV" },
+                {'9', "WXYZ" },
+                {'0', " " }
+            };
+        }
+        public string ParsePhonePad(string input)
         {
             if (string.IsNullOrEmpty(input)) return string.Empty;
 
@@ -56,7 +62,7 @@ namespace PhoneParser
             return result.ToString();
         }
 
-        private static string GetPhoneChar(char currentChar, int count)
+        private string GetPhoneChar(char currentChar, int count)
         {
             if (!KeypadMap.ContainsKey(currentChar)) return string.Empty;
 
