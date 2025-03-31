@@ -25,19 +25,9 @@ This project was developed as a coding challenge for **IronSoftware**.
    ```
 
 ## Running the Application
-To test the `OldPhoneParser` functionality, you can create a console app and call:
-```csharp
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        string input = "222 7777 33";
-        string result = PhoneParser.OldPhoneParser.OldPhonePad(input);
-        Console.WriteLine(result); // Expected Output: "CPD"
-    }
-}
+To test the `OldPhoneParser` functionality, navigate to the src project directory and execute:
+```sh
+dotnet run
 ```
 
 ## Running Tests
