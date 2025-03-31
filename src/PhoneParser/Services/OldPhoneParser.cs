@@ -5,11 +5,11 @@ namespace PhoneParser.Services
 {
     public class OldPhoneParser : IOldPhoneParser
     {
-        private readonly Dictionary<char, string> KeypadMap;
+        private readonly Dictionary<char, string> _keypadMap;
 
         public OldPhoneParser()
         {
-            KeypadMap = new Dictionary<char, string>
+            _keypadMap = new Dictionary<char, string>
             {
                 {'1', "&'(" },
                 {'2', "ABC" },
@@ -64,9 +64,9 @@ namespace PhoneParser.Services
 
         private string GetPhoneChar(char currentChar, int count)
         {
-            if (!KeypadMap.ContainsKey(currentChar)) return string.Empty;
+            if (!_keypadMap.ContainsKey(currentChar)) return string.Empty;
 
-            var letters = KeypadMap[currentChar];
+            var letters = _keypadMap[currentChar];
             int index = (count - 1) % letters.Length;
             return letters[index].ToString();
         }
